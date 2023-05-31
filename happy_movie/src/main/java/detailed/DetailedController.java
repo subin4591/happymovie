@@ -1,5 +1,12 @@
 package detailed;
 
-public class DetailedController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+public class DetailedController {
+	@RequestMapping("/detailed")
+	public String detailed() {
+		return "detailed/detailed";
+	}
 }
