@@ -1,0 +1,84 @@
+/* loginForm, deleteForm */
+#loginForm, #deleteForm {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	margin: 100px 0;
+	width: 600px;
+	height: 400px;
+	background-color: #892CDC;
+	border: 3px solid white;
+	border-radius: 20px;
+}
+#loginForm h1, #deleteForm h1 {
+	color: white;
+	margin-top: 0;
+	font-size: 40px;
+}
+
+/* loginInput */
+#loginInput {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+#loginInput input {
+	width: 60%;
+	height: 40px;
+	margin: 10px 0;
+	color: white;
+	background-color: #892CDC;
+	border: none;
+	border-bottom: 3px solid white;
+	outline: none;
+	font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+}
+#loginInput input::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+/* formBtn */
+#formBtn {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+#formBtn button {
+	width: 60%;
+    height: 50px;
+    margin-bottom: 10px;
+
+    font-weight: bold;
+    font-size: 26px;
+
+    color: #892CDC;
+    background-color: white;
+    background: white;
+    border: 2px solid #892CDC;
+    border-radius: 10px;
+}
+#formBtn button:hover {
+    color: white;
+    background: #892CDC;
+    border-color: white;
+    transition: 0.5s;
+}
+#formBtn button:active {
+    transform: scale(0.9);
+}
+#formBtn a {
+	color: white;
+	text-decoration: none;
+}
+#formBtn a:hover {
+	text-decoration: underline;
+}

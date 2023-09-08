@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="dto.UserDTO" alias="userdto"/>
+		<typeAlias type="dto.MovieDTO" alias="moviedto"/>
+		<typeAlias type="dto.ImageDTO" alias="imagedto"/>
+		<typeAlias type="dto.CrewDTO" alias="crewdto"/>
+		<typeAlias type="dto.ReviewDTO" alias="reviewdto"/>
+		<typeAlias type="dto.ReviewPagingDTO" alias="pagingdto"/>
+		<typeAlias type="dto.ApiDTO" alias="apidto"/>
+		<typeAlias type="java.util.HashMap" alias="hashmap"/>
+		<typeAlias type="dto.MovieDTO" alias="moviedto"/>
+		<typeAlias type="dto.VideoDTO" alias="videodto"/>
+		<typeAlias type="dto.BookmarkDTO" alias="bookmarkdto"/>
+	</typeAliases>
+
+</configuration>

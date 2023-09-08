@@ -1,0 +1,251 @@
+/* body */
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+input[type="button"] {
+    cursor: pointer;
+}
+
+/* header */
+header {
+    box-sizing: border-box;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+}
+#logo {
+    position: absolute;
+    left: 12px;
+    top: 21px;
+    width: 445px;
+    height: 39px;
+}
+.login_btns {
+    position: absolute;
+    right: 8px;
+    top: 21px;
+
+    width: 126px;
+    height: 40px;
+
+    font-weight: bold;
+    font-size: 20px;
+
+    color: white;
+    background-color: #892CDC;
+    background: #892CDC;
+    border-color: #892CDC;
+    border-radius: 35px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.login_btns:hover {
+    color: #892CDC;
+    background: white;
+    border-color: #892CDC;
+    transition: 0.5s;
+}
+.login_btns:active {
+    color: #892CDC;
+    background: white;
+    transform: scale(0.9);
+    border-color: #892CDC;
+    box-shadow: inset 0px 7px 7px rgba(0, 0, 0, 0.25);
+}
+#user_icon {
+	max-height: 40px;
+	border-radius: 50%;
+	border: 2px solid white;
+	position: absolute;
+	top: 20px;
+	left: 350px;
+}
+#user_icon:hover {
+	transition: 0.5s;
+	border: 2px solid rgb(93, 79, 223);
+}
+#user_icon:active {
+	transform: scale(0.9);
+}
+
+/* search */
+#search {
+    position: absolute;
+    right: 168px;
+    top: 21px;
+
+    width: 346px;
+    height: 40px;
+
+    box-sizing: border-box;
+    border-bottom: 2px solid #FFFFFF;
+}
+.inputValue {
+    width: 300px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+
+    color: #5F5F5F;
+    background-color: black;
+    border: 0;
+}
+.searchImg {
+    width: 26px;
+    height: 26px;
+}
+
+/* main */
+#main {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	margin: 40px 50px;
+    color: white;
+}
+
+/* main_poster */
+.bookmark_img {
+ 	position : absolute;
+	top: 110px;
+}
+.bookmark_img:hover{
+	transform: scale(1.5);
+}
+.b_on {
+	left: 35px;
+	width : 50px;
+	height : 55px;
+}
+.b_off {
+	left: 40px;
+	width : 40px;
+	height : 45px;
+}
+#main_poster {
+	width: 262px;
+    height: 386px;
+
+    border-radius: 30px;
+}
+
+/* main info */
+#main_info {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	margin-left: 60px;
+	line-height: 0px;
+}
+#main_info table {
+    margin-top: 30px;
+    font-size: 20px;
+}
+#main_info th {
+    text-align: left;
+    height: 30px;
+    width: 120px;
+    color: #5F5F5F;
+}
+#main_info td {
+    width: 400px;
+    color: white;
+}
+#main_info a {
+	color: white;
+}
+
+/* main buttons */
+#main_btns {
+    flex: 1;
+    margin: 5px 50px;
+    height: 65px;
+
+    box-sizing: border-box;
+    border-top: 3px solid #52057B;
+    border-bottom: 3px solid #52057B;
+}
+.main_btns {
+    margin-left: 10px;
+    width: 150px;
+    height: 60px;
+
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: bold;
+
+    color: white;
+    background-color: black;
+    border: none;
+}
+.main_btns:hover {
+    background-color: rgba(85, 5, 123, 0.5);
+    transition: 0.5s;
+}
+.main_btns:active {
+    background-color: rgba(82, 5, 123);
+}
+.active {
+    background-color: rgba(82, 5, 123);
+}
+
+/* contents */
+.contents {
+    flex: 1;
+    margin: 20px 50px;
+    color: white;
+}
+.bar {
+    margin-right: 10px;
+    width: 12px;
+    height: 40px;
+}
+h1 {
+    display: flex;
+    align-items: center;
+}
+.more_btns, .close_btns, #write_end input {
+    float: right;
+    margin-left: 20px;
+    
+    width: 100px;
+    height: 32px;
+
+    font-family: "Inter";
+    font-weight: bold;
+    font-size: 15px;
+
+    color: #892CDC;
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 35px;
+}
+.more_btns:hover, .close_btns:hover, #write_end input:hover {
+    border: 3px solid #892CDC;
+    transition: 0.5s;
+}
+.more_btns:active, .close_btns:active, #write_end input:active {
+    transform: scale(0.95);
+}
+
+/* footer */
+footer {
+	height: 157px;
+    width: 100%;
+    background-color: black;
+    
+    text-align: center;
+}
+footer p {
+	margin-top: 55px;
+    font-family: "Inter";
+    font-size: 16px;
+    line-height: 19.36px;
+    color: rgba(255, 255, 255, 0.5);
+}

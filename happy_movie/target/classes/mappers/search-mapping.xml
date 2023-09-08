@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="dao.SearchDAO.java">
+
+  <select id = "searchMovie" parameterType = "String" resultType = "moviedto">
+  	select *
+	from movie_table
+	where kor_title Like CONCAT('%', #{search}, '%')
+	OR eng_title Like CONCAT('%', #{search}, '%')
+	OR genre Like CONCAT('%', #{search}, '%')
+  </select>
+  
+    <select id = "searchCnt"  parameterType = "String"  resultType = "int">
+	select count(*)
+  from movie_table
+  where kor_title Like CONCAT('%', #{search}, '%')
+  OR eng_title Like CONCAT('%', #{search}, '%')
+  OR genre Like CONCAT('%', #{search}, '%')
+  </select>
+  
+  </mapper>

@@ -1,0 +1,91 @@
+/* joinForm, infoForm */
+#joinForm, #infoForm {
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	margin: 100px 0;
+	width: 600px;
+	height: 900px;
+	background-color: #892CDC;
+	border: 3px solid white;
+	border-radius: 20px;
+}
+#joinForm h1,
+#infoForm h1 {
+	color: white;
+	margin-top: 0;
+	font-size: 40px;
+}
+.leftNot, .leftIn {
+	height: 40px;
+	margin-top: 10px;
+	color: white;
+	background-color: #892CDC;
+	border: none;
+	border-bottom: 3px solid white;
+	outline: none;
+	font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+}
+.leftNot {
+	width: 400px;
+}
+.leftIn {
+	width: 300px;
+}
+.leftNot::placeholder,
+.leftIn::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+.inBtn input[type="button"] {
+	width: 100px;
+	height: 36px;
+	font-weight: bold;
+    font-size: 16px;
+    color: white;
+    background-color: #892CDC;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.errorText {
+	color: #FD7C7C;
+	font-weight: bold;
+	margin-top: 5px;
+}
+#joinBtn, #infoBtn {
+	width: 400px;
+    height: 50px;
+    margin-top: 20px;
+
+    font-weight: bold;
+    font-size: 26px;
+
+    color: #892CDC;
+    background-color: white;
+    background: white;
+    border: 2px solid #892CDC;
+    border-radius: 10px;
+}
+#joinBtn:hover,
+#infoBtn:hover {
+    color: white;
+    background: #892CDC;
+    border-color: white;
+    transition: 0.5s;
+}
+#joinBtn:active,
+#infoBtn:active {
+    transform: scale(0.9);
+}
+#infoForm a {
+	margin-top: 10px;
+	color: white;
+	text-decoration: none;
+}
+#infoForm a:hover {
+	text-decoration: underline;
+}

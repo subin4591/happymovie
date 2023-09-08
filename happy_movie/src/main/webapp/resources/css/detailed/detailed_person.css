@@ -1,0 +1,24 @@
+/* person */
+.is_profile td {
+    width: 150px;
+    text-align: center;
+}
+.is_profile tr:nth-child(2) {
+    font-size: 18px;
+}
+.is_profile tr:nth-child(3) {
+    color: #5F5F5F;
+}
+.is_profile img {
+    width: 130px;
+    height: 195;
+    border-radius: 10px;
+}
+.not_profile td:nth-child(1) {
+    width: 150px;
+    color: #5F5F5F;
+}
+.not_profile td:nth-child(2) {
+    width: 1000px;
+    font-size: 18px;
+}

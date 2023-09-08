@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="detailed">
+	<!-- select -->
+	<select id="userList" resultType="userdto" >
+		select * from user_table
+	</select>
+	
+	<select id="oneUser" parameterType="String" resultType="userdto">
+		select user_id, pw, name from user_table where user_id = #{user_id}
+	</select>
+	
+	<select id="imageList" resultType="imagedto">
+		select * from image_table
+	</select>
+	
+	<select id="crewList" resultType="crewdto">
+		select * from crew_table
+	</select>
+	
+	<select id="oneMovie" parameterType="String" resultType="moviedto">
+		select movie_id, rating_star, img_url, synopsis, star from movie_table where movie_id=#{movie_id}
+	</select>
+	
+	<select id="imagePS" parameterType="imagedto" resultType="String">
+		select img_url from image_table where movie_id=#{movie_id} and img_type=#{img_type}
+	</select>
+	
+	<select id="crewProfile" parameterType="String" resultType="crewdto">
+		select name, profile_url from crew_table where movie_id=#{movie_id}
+	</select>
+	
+	<select id="reviewUserList" parameterType="pagingdto" resultType="reviewdto">
+		select seq, r.user_id user_id, contents, rating_star, movie_id, writing_time, name, pw
+		from review_table r inner join user_table u
+		on r.user_id=u.user_id
+		where movie_id=#{movie_id}
+		order by ${sort_type} desc
+		limit #{start}, #{end}
+	</select>
+	
+	<select id="reviewStarAvg" parameterType="String" resultType="double">
+		select avg(rating_star)
+		from review_table
+		where movie_id=#{movie_id}
+	</select>
+	
+	<select id="reviewCount" parameterType="String" resultType="int">
+		select count(*) from review_table where movie_id = #{movie_id}
+	</select>
+	
+	<select id="reviewUserCount" parameterType="reviewdto" resultType="int">
+		select count(*) from review_table
+		where movie_id = #{movie_id} and user_id = #{user_id}
+	</select>
+	
+	<select id="reviewOne" parameterType="reviewdto" resultType="reviewdto">
+		select seq, r.user_id user_id, contents, rating_star, movie_id, writing_time, name, pw
+		from review_table r inner join user_table u
+		on r.user_id=u.user_id
+		where movie_id=#{movie_id} and r.user_id=#{user_id}
+	</select>
+	
+	<select id="bookmarkUserCount" parameterType="bookmarkdto" resultType="int">
+		select count(*) from bookmark_table
+		where user_id = #{user_id} and movie_id = #{movie_id}
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertImageTable" parameterType="imagedto">
+		insert into image_table(movie_id, img_url, img_type)
+		values(#{movie_id}, #{img_url}, #{img_type})
+	</insert>
+	
+	<insert id="insertCrewTable" parameterType="crewdto">
+		insert into crew_table(movie_id, name, profile_url)
+		values(#{movie_id}, #{name}, #{profile_url})
+	</insert>
+	
+	<insert id="insertReviewTable" parameterType="reviewdto">
+		insert into review_table(user_id, contents, rating_star, movie_id, writing_time)
+		values(#{user_id}, #{contents}, #{rating_star}, #{movie_id}, #{writing_time})
+	</insert>
+	
+	<insert id="insertOneReview" parameterType="reviewdto">
+		insert into review_table(user_id, contents, rating_star, movie_id, writing_time)
+		values(#{user_id}, #{contents}, #{rating_star}, #{movie_id}, now())
+	</insert>
+	
+	<insert id="insertBookmark" parameterType="bookmarkdto">
+		insert into bookmark_table(user_id, movie_id)
+		values(#{user_id}, #{movie_id})
+	</insert>
+	
+	<!-- update -->
+	<update id="reviewUpdate" parameterType="reviewdto">
+		update review_table
+		set contents=#{contents}, rating_star=#{rating_star}, writing_time=now()
+		where seq=#{seq}	
+	</update>
+	
+	<update id="reviewStarUpdate" parameterType="moviedto">
+		update movie_table
+		set star=#{star}
+		where movie_id=#{movie_id}
+	</update>
+	
+	<!-- delete -->
+	<delete id="reviewDelete" parameterType="int">
+		delete from review_table where seq=#{seq}
+	</delete>
+	
+	<delete id="deleteBookmark" parameterType="bookmarkdto">
+		delete from bookmark_table
+		where user_id = #{user_id} and movie_id = #{movie_id}
+	</delete>
+</mapper>

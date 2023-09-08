@@ -1,0 +1,23 @@
+main에서는 
+1. video_table
+2. bookmark_table
+2-1. movie_table
+2-2. image_table
+에서 데이터를 가져온다.
+
+ 1. video_table은 랜덤 / 정해진 데이터를 가져온다.
+ movie_id / video_url / comment
+ 
+ 2. bookmark_table에서는 login한 session에 따라 데이터를 가져와야 한다.
+ 일단은 관리자 계정으로 함 (admin)
+ -> login하지 않았을 때 페이지에서 숨겨야 하나??
+ user_id / movie_id
+ 
+ 2-1. movie table로 이동하여 kor_title / rating_star 을 가져온다.
+ rating_star은 무조건 내림으로 한다. (크/작 비교해서 이미지 표시)
+2-2. image_table로 이동하여 img_type = p 인 img_url을 가져온다. 
+ 
+ 
+search에서는 movie_table과 image_table에서 가져온다.
+movie_table : movie_id / kor_title / eng_title
+image_table : movie_id / img_url / img_type

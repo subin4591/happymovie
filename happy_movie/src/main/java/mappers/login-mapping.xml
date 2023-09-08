@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="login">
+	<!-- select -->
+	<select id="userList" resultType="userdto" >
+		select * from user_table
+	</select>
+	
+	<select id="userOne" parameterType="String" resultType="userdto">
+		select * from user_table where user_id=#{user_id}
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertUser" parameterType="userdto">
+		insert into user_table (user_id, pw, name, address, phone, email) values
+		(#{user_id}, #{pw}, #{name}, #{address}, #{phone}, #{email})
+	</insert>
+	
+	<!-- update -->
+	<update id="updateUser" parameterType="userdto">
+		update user_table set
+		pw = #{pw},
+		name = #{name},
+		address = #{address},
+		phone = #{phone},
+		email = #{email}
+		where user_id = #{user_id}
+	</update>
+	
+	<!-- delete -->
+	<delete id="deleteUser" parameterType="String">
+		delete from user_table where user_id = #{user_id}
+	</delete>
+</mapper>

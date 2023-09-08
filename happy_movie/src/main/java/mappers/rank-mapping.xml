@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+
+<insert id="insertApi" parameterType="apidto" >
+ insert into movie_table(movie_id,kor_title, eng_title, release_date, rating_star, audiences,
+		    running_time, production, genre, country, rating_age, img_url,
+			synopsis) 
+ values(#{movie_id},#{kor_title},#{eng_title}, #{release_date}, #{rating_star}, #{audiences}, #{running_time}, #{production}, #{genre}, #{country}, #{rating_age}, #{img_url},#{synopsis})
+</insert>
+
+<select id="getTotalGenre" resultType="int" parameterType = "String" >
+	select count(*) from movie_table where genre like CONCAT('%', #{genre},'%')
+</select>
+
+<select id="selectMovie" resultType="apidto" parameterType = "int" >
+	select * from movie_table where movie_id = #{movieCd}
+</select>
+
+<select id="selectGrade" resultType="apidto" >
+	SELECT * FROM movie_table ORDER BY star DESC LIMIT 0, 10
+</select>						
+
+<select id="actionList" resultType="apidto" parameterType="int">
+ select * from movie_table where genre like "%액션%" limit 
+ <foreach collection="array" item="num" separator=",">
+ #{num}
+ </foreach>
+</select>
+
+<select id="comedyList" resultType="apidto" parameterType="int">
+ select * from movie_table where genre like "%코미디%" limit 
+ <foreach collection="array" item="num" separator=",">
+ #{num}
+ </foreach>
+</select>
+<select id="thrillerList" resultType="apidto" parameterType="int">
+ select * from movie_table where genre like "%스릴러%" limit 
+ <foreach collection="array" item="num" separator=",">
+ #{num}
+ </foreach>
+</select>
+<select id="romanceList" resultType="apidto" parameterType="int">
+ select * from movie_table where genre like "%로맨스%" limit 
+ <foreach collection="array" item="num" separator=",">
+ #{num}
+ </foreach>
+</select>
+<select id="fantasyList" resultType="apidto" parameterType="int">
+ select * from movie_table where genre like "%판타지%" limit 
+ <foreach collection="array" item="num" separator=",">
+ #{num}
+ </foreach>
+</select>
+</mapper>
+
+
+
+
+
+
