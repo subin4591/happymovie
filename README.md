@@ -11,7 +11,7 @@
 - BackEnd: 
 ![Static Badge](https://img.shields.io/badge/JAVA%2011-%23F80000?logo=oracle&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/Spring%20MVC-6DB33F?logo=spring&logoColor=white)
-![Static Badge](https://img.shields.io/badge/MyBatis-d40000)
+![Static Badge](https://img.shields.io/badge/MyBatis-C71A36?logo=apachemaven&logoColor=white)
 ![Static Badge](https://img.shields.io/badge/JSP%2FJSTL-%236DB33F)
 
 - Database: 
@@ -19,7 +19,6 @@
 
 - Tools: 
 ![Static Badge](https://img.shields.io/badge/STS3-6DB33F?logo=spring&logoColor=white)
-![Static Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
 <br><br>
 
 ## 🙋‍♀️ 내가 구현한 기능
