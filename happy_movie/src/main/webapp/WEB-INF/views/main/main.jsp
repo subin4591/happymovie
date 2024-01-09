@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>MAIN | HAPPYMOVIE</title>
-    <link href = "resources/images/MainIcon.ico"" rel = "shortcut icon">
+    <link href = "resources/images/MainIcon.ico" rel = "shortcut icon">
     <link rel = "stylesheet" href = "resources/css/main.css">
     <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script>  

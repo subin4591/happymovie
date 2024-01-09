@@ -11,7 +11,6 @@
 	<title>USERINFOㅣHAPPYMOVIE</title>
 	<script src="resources/js/jquery-3.6.4.min.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script src="resources/js/login.js"></script>
 	<script>
 		$(document).ready(function() {
 			$(".errorText").css("color", "#892CDC");
@@ -143,24 +142,8 @@
 	</script>
 </head>
 <body>
-	<header>
-        <a href="main"><img id="logo" src="resources/images/logo.svg"></a>
-        <div id="search">
-            <form id="searchForm" method="GET" action="search" accept-charset="UTF-8">
-                <input class="inputValue" name="query" type="text" value="영화 제목">
-                <input class="searchImg" type="image" type="submit" src="resources/images/searchIcon.svg">
-            </form>
-        </div>
-        <c:choose>
-        	<c:when test="${ session_id != null }">
-        		<a href="loginuserinfo"><img id="user_icon" src="resources/images/userIcon.png"></a>
-        		<input class="login_btns" type="button" value="LOGOUT" onclick = "location.href = 'logout'">
-        	</c:when>
-        	<c:otherwise>
-        		<input class="login_btns" type="button" value="LOGIN" onclick = "location.href = 'login'">
-        	</c:otherwise>
-        </c:choose>
-    </header>
+	<!-- header -->
+	<%@ include file="../header.jsp" %>
     
     <form id="infoForm" action="loginuserinfosub" method="post">
     	<h1>회원정보</h1>
@@ -183,11 +166,7 @@
     	<a id="deleteA" href="logindeleteuser">회원탈퇴</a>
     </form>
 	
-	<footer>
-        <p>
-            HAPPY MOVIE<br>
-            대표 : 코딩이최고조 | 전화번호 : 010-1234-5678 | 주소 : Zoom 소회의실4
-        </p>
-	</footer>
+	<!-- footer -->
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>
