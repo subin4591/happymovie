@@ -36,9 +36,10 @@ public class DetailedController {
 		int book_cnt = service.bookmarkUserCount(book_dto);
 		
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("detailed_type", "info");
 		mv.addObject("movie_dto", movie_dto);
 		mv.addObject("book_cnt", book_cnt);
-		mv.setViewName("detailed/detailed_info");
+		mv.setViewName("detailed/detailed");
 		return mv;
 	}
 	
@@ -58,10 +59,11 @@ public class DetailedController {
 		List<CrewDTO> crew_list = service.crewProfile(movie_id);
 		
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("detailed_type", "person");
 		mv.addObject("movie_dto", movie_dto);
 		mv.addObject("crew_list", crew_list);
 		mv.addObject("book_cnt", book_cnt);
-		mv.setViewName("detailed/detailed_person");
+		mv.setViewName("detailed/detailed");
 		return mv;
 	}
 	
@@ -90,11 +92,12 @@ public class DetailedController {
 		List<String> still_list = service.imagePS(stilldto);
 		
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("detailed_type", "photo");
 		mv.addObject("movie_dto", movie_dto);
 		mv.addObject("book_cnt", book_cnt);
 		mv.addObject("poster_list", poster_list);
 		mv.addObject("still_list", still_list);
-		mv.setViewName("detailed/detailed_photo");
+		mv.setViewName("detailed/detailed");
 		return mv;
 	}
 	
@@ -178,6 +181,7 @@ public class DetailedController {
 		int rv_c = service.reviewUserCount(r_dto);
 		
 		ModelAndView mv = new ModelAndView();
+		mv.addObject("detailed_type", "grade");
 		mv.addObject("movie_dto", movie_dto);
 		mv.addObject("book_cnt", book_cnt);
 		mv.addObject("review_list", review_list);
@@ -188,7 +192,7 @@ public class DetailedController {
 		mv.addObject("divNum", divNum);
 		mv.addObject("user_dto", user_dto);
 		mv.addObject("rv_c", rv_c);
-		mv.setViewName("detailed/detailed_grade");
+		mv.setViewName("detailed/detailed");
 		return mv;
 	}
 	
